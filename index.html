@@ -3,56 +3,108 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>My GitHub Pages Test Site</title>
+    <title>Skolv Lintom | Personal Site</title>
     <meta
       name="description"
-      content="A simple GitHub Pages test site for verifying deployment."
+      content="Personal landing page for Skolv Lintom with profile, projects, and contact links."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&family=Syne:wght@600;700;800&display=swap"
+      rel="stylesheet"
     />
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-    <main class="wrap">
-      <section class="card">
-        <p class="eyebrow">lintompages.github.io</p>
-        <h1>GitHub Pages is working</h1>
-        <p>
-          If you can see this page after enabling Pages, your site is deployed
-          correctly.
+    <div class="bg-orb orb-1" aria-hidden="true"></div>
+    <div class="bg-orb orb-2" aria-hidden="true"></div>
+    <div class="texture" aria-hidden="true"></div>
+
+    <main class="page">
+      <header class="hero reveal">
+        <p class="kicker">Skolv Lintom</p>
+        <h1>Building practical tools and clean web experiences.</h1>
+        <p class="subtitle">
+          This is my corner of the web. I use it to share projects, test ideas,
+          and ship tiny experiments that solve real problems.
         </p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#projects">See Projects</a>
+          <a class="btn btn-ghost" href="#contact">Get in Touch</a>
+        </div>
+      </header>
 
-        <dl class="facts" aria-label="Deployment details">
-          <div>
-            <dt>Status</dt>
-            <dd class="ok">Online</dd>
-          </div>
-          <div>
-            <dt>Repository</dt>
-            <dd>lintompages.github.io</dd>
-          </div>
-          <div>
-            <dt>Last loaded</dt>
-            <dd id="loaded-at">Loading...</dd>
-          </div>
-          <div>
-            <dt>Build stamp</dt>
-            <dd id="build-stamp">Loading...</dd>
-          </div>
-        </dl>
-
-        <p class="tip">
-          Tip: Edit <code>index.html</code>, push again, and refresh to confirm
-          updates are publishing.
+      <section class="panel reveal" id="about" aria-label="About">
+        <h2>About</h2>
+        <p>
+          I enjoy turning rough ideas into simple, useful products. My focus is
+          on clarity, performance, and building things that are easy to maintain.
         </p>
       </section>
+
+      <section class="panel reveal" id="projects" aria-label="Highlighted projects">
+        <h2>Highlighted Projects</h2>
+        <div class="project-grid">
+          <article class="project-card">
+            <h3>Pages Sandbox</h3>
+            <p>
+              A lightweight GitHub Pages playground for testing publish flows,
+              cache behavior, and deploy verification.
+            </p>
+          </article>
+          <article class="project-card">
+            <h3>UI Snippet Library</h3>
+            <p>
+              A growing collection of responsive sections and components for
+              quick prototyping without heavy frameworks.
+            </p>
+          </article>
+          <article class="project-card">
+            <h3>Automation Notes</h3>
+            <p>
+              Practical scripts and workflows that reduce repetitive development
+              tasks and keep projects tidy.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <section class="panel reveal" id="contact" aria-label="Contact">
+        <h2>Contact</h2>
+        <p>
+          Reach out on GitHub to collaborate, share feedback, or say hello.
+        </p>
+        <a class="inline-link" href="https://github.com/skolv-lintom"
+          >github.com/skolv-lintom</a
+        >
+      </section>
+
+      <footer class="site-footer reveal" aria-label="Site metadata">
+        <div class="stamp-row">
+          <span>Last loaded:</span>
+          <strong id="loaded-at">Loading...</strong>
+        </div>
+        <div class="stamp-row">
+          <span>Build stamp:</span>
+          <strong id="build-stamp">Loading...</strong>
+        </div>
+      </footer>
     </main>
 
     <script>
       const BUILD_STAMP = "2026-06-03T08:28:10Z-e6989ea";
       const loadedAt = document.getElementById("loaded-at");
       const buildStamp = document.getElementById("build-stamp");
+      const reveals = document.querySelectorAll(".reveal");
 
       loadedAt.textContent = new Date().toLocaleString();
       buildStamp.textContent = BUILD_STAMP;
+
+      reveals.forEach((el, i) => {
+        el.style.animationDelay = `${i * 100}ms`;
+        el.classList.add("is-visible");
+      });
     </script>
   </body>
 </html>
