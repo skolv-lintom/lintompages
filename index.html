@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>GitHub Pages Test Site</title>
+    <meta
+      name="description"
+      content="A simple GitHub Pages test site for verifying deployment."
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="wrap">
+      <section class="card">
+        <p class="eyebrow">lintompages.github.io</p>
+        <h1>GitHub Pages is working</h1>
+        <p>
+          If you can see this page after enabling Pages, your site is deployed
+          correctly.
+        </p>
+
+        <dl class="facts" aria-label="Deployment details">
+          <div>
+            <dt>Status</dt>
+            <dd class="ok">Online</dd>
+          </div>
+          <div>
+            <dt>Repository</dt>
+            <dd>lintompages.github.io</dd>
+          </div>
+          <div>
+            <dt>Last loaded</dt>
+            <dd id="loaded-at">Loading...</dd>
+          </div>
+        </dl>
+
+        <p class="tip">
+          Tip: Edit <code>index.html</code>, push again, and refresh to confirm
+          updates are publishing.
+        </p>
+      </section>
+    </main>
+
+    <script>
+      const loadedAt = document.getElementById("loaded-at");
+      loadedAt.textContent = new Date().toLocaleString();
+    </script>
+  </body>
+</html>
