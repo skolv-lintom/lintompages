@@ -33,6 +33,10 @@
             <dt>Last loaded</dt>
             <dd id="loaded-at">Loading...</dd>
           </div>
+          <div>
+            <dt>Build stamp</dt>
+            <dd id="build-stamp">Loading...</dd>
+          </div>
         </dl>
 
         <p class="tip">
@@ -43,8 +47,12 @@
     </main>
 
     <script>
+      const BUILD_STAMP = "2026-06-03T00:00:00Z";
       const loadedAt = document.getElementById("loaded-at");
+      const buildStamp = document.getElementById("build-stamp");
+
       loadedAt.textContent = new Date().toLocaleString();
+      buildStamp.textContent = BUILD_STAMP;
     </script>
   </body>
 </html>

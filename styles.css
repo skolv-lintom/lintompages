@@ -89,6 +89,12 @@ dd {
   font-weight: 500;
 }
 
+#build-stamp {
+  font-family: Consolas, "Courier New", monospace;
+  font-size: 0.95rem;
+  color: #244a69;
+}
+
 .ok {
   color: var(--ok);
 }
